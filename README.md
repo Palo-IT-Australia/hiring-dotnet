@@ -4,7 +4,7 @@ The database migrations have already been commited to the repo.
 run `dotnet ef database update` in the server folder (`Wallbaord`)
 
 
-# Challanges
+# Challenges
 
 ## Challange 1 - Register the Custom Authorization Middleware
 ### Description
@@ -15,7 +15,7 @@ They have also made a handy extension method to expose the custom middleware thr
 ### Acceptance Criteria
 - Add the custom middleware into the app pipeline
 
-## Challange 2 - Censor posts with the PostCensorService
+## Challenge 2 - Censor posts with the PostCensorService
 ### Description
 There is a service located at `Services>PostCensorService.cs`. This service provides a way to censor banned words from a post before the post is added into the database. Please register the service, and then implement the method `CensorPost` in the `CreatePost` endpoint of the `WallboardController`. The wallboard controller is found at `Controller>WallboardController.cs`.
 
@@ -25,7 +25,7 @@ There is a service located at `Services>PostCensorService.cs`. This service prov
 - The CensorPost method is being used to censor posts before being added into the database.
 
 
-## Challange 3 - Finish the implementation of the CustomFilterCollection
+## Challenge 3 - Finish the implementation of the CustomFilterCollection
 ### Description
 Inside the Wallboard Controller `GetPosts` method in `Controllers>WallboardController.cs` a custom extension with is being used to filter the posts being returned. The method is called `CustomerFilterCollection`. If you look at the implementation of the method, you will see it takes an `IQueryable` and a `Expression<Func<T, bool>>` predicate. Finish the implementation by using the predicate to filter the posts, and return the filtered collection.
 
