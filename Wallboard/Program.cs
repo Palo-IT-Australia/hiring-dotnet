@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using Wallboard;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Wallboard.Configuration;
-using Wallboard.Middleware;
 using Wallboard.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +17,6 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-app.UseCustomAuthMiddleware();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute("default", "{controller}/{action=Index}/{id?}");
