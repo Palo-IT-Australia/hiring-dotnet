@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Wallboard.Extensions;
 using Wallboard.Models;
 using Wallboard.Services;
 
@@ -31,7 +32,8 @@ public class WallboardController : Controller
     public async Task<IActionResult> GetPosts()
     {
         var dbContext = await _dbContextFactory.CreateDbContextAsync();
-        var posts = await dbContext.Posts.Select(x => new PostDto(x)).ToListAsync();
-        return Ok(posts);
+        var posts = dbContext.Posts.CustomFilterCollection(x => x.Name != x.Content);
+        var postDtos = await posts.Select(x => new PostDto(x)).ToListAsync();
+        return Ok(postDtos);
     }
 }

@@ -2,11 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using Wallboard;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Wallboard.Configuration;
-using Wallboard.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
-builder.Services.AddScoped<IPostCensorService, PostCensorService>();
 builder.Services.Configure<PostCensorOptions>(builder.Configuration.GetSection("PostCensorOptions"));
 builder.Services.AddPooledDbContextFactory<WallboardContext>((options) =>
 {
