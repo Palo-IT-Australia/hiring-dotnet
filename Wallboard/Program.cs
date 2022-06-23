@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Wallboard;
-using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Wallboard.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,13 +17,5 @@ app.UseRouting();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute("default", "{controller}/{action=Index}/{id?}");
-});
-app.UseSpa(spa =>
-{
-    spa.Options.SourcePath = "./ClientApp";
-    if (builder.Environment.IsDevelopment())
-    {
-        spa.UseReactDevelopmentServer(npmScript: "start");
-    }
 });
 app.Run();
