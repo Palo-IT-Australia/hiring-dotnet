@@ -6,7 +6,7 @@ run `dotnet ef database update` in the server folder (`Wallbaord`)
 
 # Challenges
 
-## Challange 1 - Register the Custom Authorization Middleware
+## Challenge 1 - Register the Custom Authorization Middleware
 ### Description
 One of the developers has written some custom authorisation middleware.
 The middleware can be found in `Middleware>CustomAuthMiddleware.cs`.
